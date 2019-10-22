@@ -56,6 +56,7 @@ public class Character_Animate extends SurfaceView implements Runnable, View.OnT
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public Character_Animate(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
+        init(context);
     }
 
     public void init(final Context context) {
@@ -86,12 +87,12 @@ public class Character_Animate extends SurfaceView implements Runnable, View.OnT
             public void surfaceChanged(SurfaceHolder surfaceHolder, int i, int i1, int i2) {
                 src = new Rect(srcx, srcy, framesize.x, framesize.y);
                 dest = new Rect(src);
-                init(context);
+
             }
 
             @Override
             public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-                init(context);
+
             }
         });
     }
