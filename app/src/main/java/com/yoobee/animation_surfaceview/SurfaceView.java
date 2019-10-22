@@ -4,9 +4,12 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
+
+import androidx.annotation.RequiresApi;
 
 public class SurfaceView extends android.view.SurfaceView implements Runnable {
 
@@ -19,6 +22,7 @@ public class SurfaceView extends android.view.SurfaceView implements Runnable {
     int img_list[] = {R.drawable.runningcat1,R.drawable.runningcat2,R.drawable.runningcat3,R.drawable.runningcat4,R.drawable.runningcat5,
             R.drawable.runningcat6,R.drawable.runningcat7,R.drawable.runningcat8};
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public SurfaceView(Context context) {
         super(context);
         init(context);
@@ -33,6 +37,7 @@ public class SurfaceView extends android.view.SurfaceView implements Runnable {
         super(context, attrs, defStyleAttr);
         init(context);
     }
+
 
     public SurfaceView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
